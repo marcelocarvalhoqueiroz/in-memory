@@ -52,8 +52,11 @@ class MembroController extends Controller
     public function show(){
         $membros = Membro::get();
 
+        $total = Membro::count();
+
         return view('membros', [
-            'membros' => $membros
+            'membros' => $membros,
+            'total' => $total
         ]);
     }
 

@@ -49,6 +49,8 @@
             @endforeach
             </tbody>
         </table>
+
+        <p>Total de membros: {{ $total }}</p>
     </div>
 </body>
 
