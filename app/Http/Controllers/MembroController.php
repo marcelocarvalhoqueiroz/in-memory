@@ -64,4 +64,13 @@ class MembroController extends Controller
             'membro' => $membro
         ]);
     }
+
+    public function viraSemana(){
+        Membro::query()->update(['cd' => false]);
+
+        return response()->json([
+            'message' => 'Semana alterada com sucesso!',
+            'status' => 'OK'
+        ]);
+    }
 }

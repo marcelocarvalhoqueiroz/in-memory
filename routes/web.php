@@ -11,4 +11,6 @@ Route::get('/membros/detalhe/{id}', [MembroController::class, 'showDetail']);
 
 Route::post('/cadastramembros', [MembroController::class, 'store']);
 
+Route::get('/virasemana', [MembroController::class, 'viraSemana']);
+
 

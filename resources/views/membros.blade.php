@@ -15,6 +15,10 @@
 </head>
 <body>
     <div class="container">
+        <div class="d-flex justify-content-end mb-4">
+            <button id="reseta-semana" class="btn btn-primary">Virar Semana</button>
+        </div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -49,5 +53,22 @@
 </body>
 
 <script>
+    $(document).ready(function() {
+        $('#reseta-semana').click(function (){
+            $.ajax({
+                url: "/virasemana", 
+                type: "GET",
+                success: function(response) {
+                    alert(response.message);
+                    if(response.status == 'OK'){
+                        location.reload();
+                    }
+                },
+                error: function(xhr) {
+                    alert("Erro ao virar semana: " + xhr.responseJSON.message); 
+                }
+            });
+        })
+    });
 </script>
 </html>
